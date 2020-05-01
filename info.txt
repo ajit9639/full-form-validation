@@ -1,0 +1,72 @@
+Pop up boxes
+-----------------------------
+1) alert()
+2) confirm() 
+3) prompt()
+
+Variable
+------------------------------------------------
+variable is a memory container which is use for store single data.
+
+In js there two keywords for initialize var.
+
+var,let
+
+
+syntax
+------
+var variable_name = value;
+let variable_name = value;
+
+Operators
+-----------------------------------------------
+Arithmetic Op (+,-,*,/,%)
+Assignment Op (+=,-=,*=,/=,%=)
+Comaprision Op (==,===,>,<,>=,<=,!=,!==)
+logical operators (&&,||,!)
+
+Conditional Statement
+-----------------------------------------------------
+if
+if-else
+if-elseif-else
+switch
+
+LOOPS
+------------------------------------------------
+In computer programming, a loop is a sequence of instructions that is repeated until a certain condition is reached. An operation is done, such as getting an item of data and changing it, and then some condition is checked such as whether a counter has reached a prescribed number.
+
+1) For loop
+2) while
+3) do while
+4) for in
+
+ARRAY:-
+-----------------------------------------------------
+DS:- Collection of similar type of data
+JAVASSCRIPT:- Collection of data either similar type or different type
+
+Syntax:-
+--------------------
+var arr = [value1, value2, value3....,valuen]
+
+var arr = new array(value1, value2,....., valuen);
+
+var arr = {value1, value2,.....,valuen};
+
+Traversing in an Array
+----------------------------------------------------
+access each and every elements from an array
+
+
+
+
+
+
+
+
+
+
+
+
+

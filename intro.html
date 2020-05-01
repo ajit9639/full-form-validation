@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript | Form Validation</title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+		}
+ 		h2{
+           background-color: #808080;
+           color: white;
+           margin: 0;
+           padding: 0;
+           height: 50px;
+           line-height: 50px;
+           font-family: Arial;
+		}
+		.err{
+			color: #ff0000;
+		}
+	</style>
+</head>
+<body bgcolor="#f2f2f2">
+<center>
+	<h2>JS FORM VALIDATION</h2>
+	<form action="test.php" onsubmit="return validate()">
+		<p>
+			<input type="text" id="name" placeholder="Enter Name">
+			<span class="err">*</span><br>
+			<span class="err" id="nErr"></span>
+		</p>
+		<p>
+			<input type="text" id="email" placeholder="mail@example.com">
+			<span class="err">*</span><br>
+			<span class="err" id="eErr"></span>
+		</p>
+		<p>
+			<input type="password" id="pass" placeholder="Password">
+			<span class="err">*</span><br>
+			<span class="err" id="pErr"></span>
+		</p>
+		<p>
+			<input type="password" id="cpass" placeholder="Confirm Password">
+			<span class="err">*</span><br>
+			<span class="err" id="cpErr"></span>
+		</p>
+		<p>
+			Gender:- <input type="radio" id="male" name="gen" value="male">Male
+			         <input type="radio" id="female" name="gen" value="female">Female
+			         <span class="err" id="gErr"></span>
+		</p>
+		<p>
+			Documents:- <input type="checkbox" id="ac" name="doc">AC
+			            <input type="checkbox" id="pc" name="doc">PC
+			            <input type="checkbox" id="ot" name="doc">Others<br>
+			            <span class="err" id="dErr"></span>
+		</p>
+		<p>
+			City:- 
+			<select  id="city">
+				<option value="#">Select City</option>
+				<option>Noida</option>
+				<option>Delhi</option>
+				<option>Agra</option>
+			</select><br>
+			<span class="err" id="sErr"></span>
+		</p>
+		<p>
+			<button type="submit" value="Validate">validate</button>
+			<!--<input type="submit" value="Validate">-->
+		</p>
+	</form>
+</center>
+
+<script>
+	function validate(){
+		var name   = document.getElementById('name').value;
+		var email  = document.getElementById('email').value;
+		var pass   = document.getElementById('pass').value;
+		var cpass  = document.getElementById('cpass').value;
+		var male   = document.getElementById('male').checked;
+		var female = document.getElementById('female').checked;
+		var ac     = document.getElementById('ac').checked;
+		var pc     = document.getElementById('pc').checked;
+		var ot     = document.getElementById('ot').checked;
+		var city   = document.getElementById('city').value;
+		
+        //name
+
+		if (name == "") {
+            document.getElementById('nErr').innerHTML = "Required Name";
+            return false;
+		}
+
+		//email
+
+		if (email == "" ) 
+		{
+            document.getElementById('eErr').innerHTML = "Required Email";
+            return false;
+		}
+
+
+
+		if(!email.match(/[0-9a-zA-Z._]+@+[a-z]+.+[a-z]/))
+		{
+		document.getElementById('eErr').innerHTML = "Invalid Email";
+            return false;	
+		}
+		
+
+
+		//password
+		if (pass == "") {
+            document.getElementById('pErr').innerHTML = "Required Password";
+            return false;
+		}
+
+		if(pass.length <=4 || pass.length >=8){
+			document.getElementById('pErr').innerHTML = "Password must be in 4 to 8";
+            return false;
+		}
+		//confirm password
+		if (cpass == "") {
+            document.getElementById('cpErr').innerHTML = "Required Confirm Password";
+            return false;
+		}
+		//pass and cpass comp
+		if (pass !== cpass) {
+			document.getElementById('cpErr').innerHTML = "Mismatch Confirm Password";
+            return false;
+		}
+
+		//gender
+		if (male == false && female == false) {
+           document.getElementById('gErr').innerHTML = "Required Gender";
+            return false;
+		}
+        //documents
+        if (ac == false && pc == false && ot == false) {
+           document.getElementById('dErr').innerHTML = "Required Documents";
+            return false;
+        }
+        //city
+        if (city == "#") {
+        	document.getElementById('sErr').innerHTML = "Required City";
+            return false;
+        }
+	}
+</script>
+</body>
+</html>
